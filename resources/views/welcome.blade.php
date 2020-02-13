@@ -96,5 +96,31 @@
                 </div>
             </div>
         </div>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script>
+            var apiSendSession = function(value) {
+                $.post('/api/session', {session_value: value}, function(res) {
+                    console.log(res);
+                });
+            };
+            var apiGetSession = function() {
+                $.get('/api/session', function(res) {
+                    console.log(res);
+                });
+            };
+            var webSendSession = function(value) {
+                $.get('/send-session', {session_value: value}, function(res) {
+                    console.log(res);
+                });
+            };
+            var webGetSession = function() {
+                $.get('/session', function(res) {
+                    console.log(res);
+                });
+            };
+        </script>
     </body>
 </html>
